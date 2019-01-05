@@ -1,2 +1,2 @@
-p=[*('a'..'z'),*' '].sample(20).join
+p = [*('a'..'z'), [' ']].sample(20).join
 p p

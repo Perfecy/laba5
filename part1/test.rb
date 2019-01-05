@@ -1,6 +1,7 @@
 require './main.rb'
 require 'minitest/autorun'
 
+# Test class
 class Test < MiniTest::Unit::TestCase
   def setup
     @x = rand * 10 - 5
@@ -9,12 +10,13 @@ class Test < MiniTest::Unit::TestCase
   end
 
   def test_1
-    assert_in_delta((3 + Math.exp(@y)-1) / (1+@x * (@y-Math.tan(@z))), evaluate(@x, @y, @z), 1.0e-10)
+    assert_in_delta((3 + Math.exp(@y) - 1) / (1 + @x * (@y - Math.tan(@z))),
+                    evaluate(@x, @y, @z), 1.0e-10)
   end
 
-  #def test_2
-    #assert_nil(evaluate(0, @y, 0))
-  #end
+  # def test_2
+  # assert_nil(evaluate(0, @y, 0))
+  # end
 
   def test_3
     assert_in_delta(4.033486369448158, evaluate(3.0, 2.0, 1.0), 1.0e-10)
